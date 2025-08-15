@@ -15,5 +15,5 @@ enjoy content :)
 Jack is the blow little skinny on 100% of screen but on 110% full
 king is done change font on 9 px :)
 enyoj:)
-on internet you cannot find bearded king and bearded jack
+on internet you cannot find moustache king and moustache jack
 enjoy :)
