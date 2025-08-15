@@ -13,5 +13,5 @@ i mo working on some queens and jokers :) and i have to clean king figure and ja
 just mention this repository
 enjoy content :)
 Jack is the blow little skinny on 100% of screen but on 110% full
-king is done
+king is done change font on 9 px :)
 enyoj:)
