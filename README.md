@@ -12,3 +12,5 @@ i mo working on some queens and jokers :) and i have to clean king figure and ja
 
 just mention this repository
 enjoy content :)
+Jack is the blow
+tomorrow i will be working on cleaning king :)
