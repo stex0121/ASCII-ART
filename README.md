@@ -2,20 +2,9 @@
 Fan made ASCII ART
 If you like my ascii art
 free using,changing,do whatever you want i just need one 
-mantioned this repository
-tnx :)
-Hello guys these days i will make mini tarot reader
-
-beacuse i m trying something with cards now it is cool
-
-for my project i will use css html javascript
-
-and you will like it
 
 
-i made this script for ascii card reader it is free to use implement do what you want it is in web design section
-
-i m making my own ascii tarot card reader this days.
+i made fast ascii tarot card reader i m not intersted in tarot but i just wanted to share ,if you have cards and picture it well it can be very good generator :).
 
 just mention this repository
 enjoy content :)
