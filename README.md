@@ -11,3 +11,11 @@ beacuse i m trying something with cards now it is cool
 for my project i will use css html javascript
 
 and you will like it
+
+
+i made this script for ascii card reader it is free to use implement do what you want it is in web design section
+
+i m making my own ascii tarot card reader this days.
+
+just mention this repository
+enjoy content :)
