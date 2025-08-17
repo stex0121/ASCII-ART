@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ASCII Art 3D Y-axis Flip with Pause</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #222;
+    font-family: monospace;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    perspective: 1000px;
+  }
+  #ascii-art {
+    position: absolute;
+    top: 50%;
+    font-size: 9px;
+    white-space: pre;
+    user-select: none;
+    pointer-events: none;
+    color: #3cff00;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transform: translateY(-50%) translateX(0) rotateY(0deg);
+    transition: transform 0.6s ease, color 0.6s ease;
+  }
+</style>
+</head>
+<body>
+
+<pre id="ascii-art">
+                                                                                                                                                                                                                      @@@@                                        @@@@  @@
+                                                                                                                                                                                                                     %%  +@@#                                    **%%. :@@@  
+                                                                                                                                                                                                               @%#@  *@    #%#                                    %#*%#. .@@@  
+                                                                                                                                                                                                             @@:.=@@@@  @%*:. .*@@                                %@:  =*%#  .@@ 
+                                                                                                                                                                                                             #%     =@@@ #. .     -@@                            #+   . :*#*##@@     
+                                                                                                                                                                                                            %@@:    . -#@ @@=:    .:@@      #%@%=@@*#***+#%#%+=:. =@@@#**+  
+                                                                                                                                                                                                            **= .--..      .=#@@%#.   =%*%%%-   ..:*+#*%#:.:    =##*  
+                                                                                                                                                                                                             @@    .=@@#-       +%@@.  @@.  -@*=:%@@%.  .%:  #@#*+   
+                                                                                                                                                                                                              @%..... -+@@@@@@%    -*+@-   -#.    :. .+@@= -@@#*    
+                                                                                                                                                                                                                %@*    .       -@%.  .@%    .@=    -%#@%%%+  : +%% 
+                                                                                                                                                                                                                **%%@::  .   .  .%@. :@+ =@@@@: +@@@%%@@@%=  =..++   
+                                                                                                                                                                                                                 +%.. .:. ..... .++.::=+=:+..++:    .     .+  =%*  
+                                                                                                                                                                                                                  *@@@%-   =.    .-@@+.    .  .   ..*.    .%*..-##    
+                                                                                                                                                                                                                    #%@@@@@@@#+*@@@@=. -+-..:#:..... *@%%@@@%%:. ..@#   
+                                                                                                                                                                                                                    @.+@@@@@@@%@=    -+. ...**.. ...@%%%**++##.. .:*   
+                                                                                                                                                                                                                  %*            .%@@@- ....:#=.  =*#+**++#**%. ....*%     
+                                                                                                                                                                                                                  #*#%*=##++@@@@@@@# += ..:...*-+@@:.##+++#++%+....  #%    
+                                                                                                                                                                                                        .@.@.@@.@.@.                *+:-......+@@@- +#*++***#@-..:.. %#    
+                                                                                                                                                                                                       @*        ...*@@%%%@..  ...:.+= --  .+..@#.  +%*+=**+##@-.::. =@    
+                                                                                                                                                                                                        @.@.@.@.@.    ..@@-    .:.-*.:+. =-  . .@:  :##*#**#+#%@...:.. @     
+                                                                                                                                                                                                                  @.    ..@@%-  .. +-.===#@@%@*..  .@#*#+#*#++#@..::...@    
+                                                                                                                                                                                                                     @+    @@@@@:  -=  =@@@@%@@%@@@@@+**+**#*#@-..::...*     
+                                                                                                                                                                                                        @.@@.@@.@@.%@@.@@.@.   .+@+@+..   *@@%%%%#%###*##**%@@*..... .#     
+                                                                                                                                                                                                       @@@.             ..      *@%@-     .-+@@@@@@@@%@#*@@-...  ...:@    
+                                                                                                                                                                                                        : @  @ .. @ @ @ @ @ @. %@@#+@@@#-       .... :+@@@#:   +%:  +@    
+                                                                                                                                                                                                                            =@@@@##%@  .+%+                .-+*:   @@#    
+                                                                                                                                                                                                                            @@*###+@:.  .+@@* .   .+%@@@@**-   :+@@@     
+                                                                                                                                                                                                                    @@@+-.:=@@@###@-....-@@@@@##:@@@@@@@@@@@@@@%#        
+                                                                                                                                                                                                                  #@+        .*@@*%*  ...-@%      
+                                                                                                                                                                                                                 #=      .... ..@@@@*..   :     
+                                                                                                                                                                                                                 #%@@@@..   ... .-@@+   . %  
+                                                                                                                                                                                                                   *%%@@@@...          -@@    
+                                                                                                                                                                                                                      **+%@@@-.  ..: +@@@      
+                                                                                                                                                                                                                             @@@%@@@@%   
+      
+</pre>
+
+<script>
+  const art = document.getElementById('ascii-art');
+  let viewportWidth = window.innerWidth;
+  const speed = 200;
+  let pos = 0;
+  let direction = 1; // 1 = left->right, -1 = right->left
+  let flipped = false;
+  let paused = false;
+
+  function animate(timestamp) {
+    if (!animate.last) animate.last = timestamp;
+    const delta = (timestamp - animate.last) / 1000;
+    animate.last = timestamp;
+
+    if (paused) {
+      requestAnimationFrame(animate);
+      return;
+    }
+
+    pos += speed * delta * direction;
+
+    if (!flipped && pos >= viewportWidth - art.offsetWidth) {
+      pos = viewportWidth - art.offsetWidth;
+      paused = true;
+      flipped = true;
+      art.style.color = '#00ffff';
+      art.style.transform = `translateY(-50%) translateX(${pos}px) rotateY(180deg)`;
+      setTimeout(() => {
+        direction = -1;
+        paused = false;
+      }, 1000); // pauza 1 sekundu na flip
+    } else if (flipped && pos <= 0) {
+      pos = 0;
+      paused = true;
+      flipped = false;
+      art.style.color = '#3cff00';
+      art.style.transform = `translateY(-50%) translateX(${pos}px) rotateY(0deg)`;
+      setTimeout(() => {
+        direction = 1;
+        paused = false;
+      }, 1000);
+    } else {
+      art.style.transform = `translateY(-50%) translateX(${pos}px)` + (flipped ? ` rotateY(180deg)` : ` rotateY(0deg)`);
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('resize', () => {
+    viewportWidth = window.innerWidth;
+  });
+
+  requestAnimationFrame(animate);
+</script>
+
+</body>
+</html>
+
+<!--i coded this with chat gpt,it is not what i wanted beacuse it is not simple 2d/3d 2d rotation on X(180 degress) and in 3d Y(-1) this is my logic one part of code that i implemented with chat gpt,beacuse i want ascii to be little live :)-->
