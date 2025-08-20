@@ -8,4 +8,5 @@ sample statue doesnt have this details
 it is from my head...
 i didnt know that ascii symbols can rotate :)
 zoom out on in broswer 50% smaller but details better :) 
-The nommos-kali does dance :)
+electric universe-the prayer
+i bow to lord vishnu :)
