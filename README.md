@@ -10,3 +10,5 @@ i didnt know that ascii symbols can rotate :)
 zoom out on in broswer 50% smaller but details better :) 
 electric universe-the prayer
 i bow to lord vishnu :)
+i will do some religions what i like :)
+for the end of path i will work serbs  christianity
