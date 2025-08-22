@@ -10,3 +10,4 @@ and improved justicia is half left on 90 angle right is on 45 degree :)
 i think ascii symbols are future pure gold :) crunch it :D
 mascular women is my imagination 
 Long live Mother Russia!
+one signature is stronger than ten divisions.
