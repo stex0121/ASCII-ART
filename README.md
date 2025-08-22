@@ -11,3 +11,4 @@ i think ascii symbols are future pure gold :) crunch it :D
 mascular women is my imagination 
 Long live Mother Russia!
 one signature is stronger than ten divisions.
+i think that the stallin if is a live be proud :D
