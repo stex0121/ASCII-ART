@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color map ASCII art</title>
+  <style>
+    body {
+      background-color: rgb(134, 133, 133);
+      color: rgb(129, 127, 127);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+body h1 {
+  color: rgb(204, 25, 25);
+  font-size:18px
+  ;
+}
+body p{
+  color: rgb(194, 13, 0);
+  font-size:16px;
+  align-items: left;
+  justify-content: left;
+  opacity: 0.8;
+  
+}
+    .ascii-art {
+      font-family: monospace;
+      white-space: pre;
+      line-height: 0.7;
+      font-size:9px;
+     scale: 0.6;
+    }   
+
+    .plava1{
+      color: rgb(7, 84, 156);
+      
+      
+    }
+    .plava2{
+      color: rgb(3, 13, 71);
+     
+      
+      
+    }
+    .plava3{
+      color: rgb(10, 151, 233);
+      
+      
+      
+    }
+    .crvena{
+      color: rgb(245, 29, 0);
+      text-shadow: 0 0 5px rgb(177, 4, 4)
+      0 0 10px rgba(141, 1, 1, 0.986);
+      opacity: 0.8;
+     
+      
+    }
+    .narandzasta{
+      color: gold;
+     
+      
+      
+    }.bela1{
+      color: rgb(255, 255, 255);
+      
+    }  
+    .bela{
+      color: rgb(255, 255, 255);
+      opacity: 0.8;
+    }  
+      
+    .crna{
+      color: black;
+      
+      
+    }
+    .pink{
+      color: pink;
+    }
+    @keyframes levitate {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.levitate {
+  animation: levitate 3s ease-in-out infinite;
+}
+  </style>
+</head>
+<body>
+ <h1>Joseph Vissarionovich Stalin queots fact
+ <p>Stalin’s quotes reveal the core of his ideology, built on total control, political pragmatism, and a totalitarian view of the world. 
+  <br><br>
+  He believed that truth was not universal, but something dictated by the Party — 
+  <br><br>
+  “it doesn’t matter what people think, only what we make them think.
+  <br><br>
+  ” To him, art and literature were tools of ideology, 
+  <br><br>
+  as “writers are the engineers of the human soul.” Morality held no value in his system, since “no man —
+  <br><br> 
+  no problem,” and any crime was justified if it served the revolution. The system thrived on paranoia and the constant hunt for enemies — 
+   <br><br>
+   “those we don’t have are our enemies,” because ideological loyalty mattered more than truth or
+  <br><br>
+   justice. The Party was a godlike entity, and bureaucracy held ultimate power — “one signature is stronger than ten divisions.” 
+   <br><br>
+   He saw democracy as deception, claiming “democracy is just a decoration for capitalism.” All these statements reflect an 
+   <br><br>
+   ideological system where the end justifies any means, where the individual is disposable, 
+   <br><br>
+   loyalty to the regime is absolute, and the world is eternally divided between “us” and “them,” leaving no room for neutrality or dialogue.</p>
+   <br><br>
+   <br><br>
+    <p>Staljinovi citati otkrivaju srž njegove ideologije, zasnovane na potpunoj kontroli, političkom pragmatizmu i totalitarnom pogledu na svet. 
+     <br><br>
+     Verovao je da istina nije univerzalna, već nešto što diktira Partija — 
+     <br><br>
+     „nije važno šta ljudi misle, već šta ih mi nateramo da misle.“
+     <br><br>
+     Za njega su umetnost i književnost bili alati ideologije, 
+     <br><br>
+     jer su „pisci inženjeri ljudske duše.“ Moral nije imao vrednost u njegovom sistemu, jer „nema čoveka —
+     <br><br> 
+     nema problema,“ a svaki zločin bio je opravdan ako je služio revoluciji. Sistem je počivao na paranoji i stalnoj potrazi za neprijateljima — 
+      <br><br>
+      „oni koje nemamo su naši neprijatelji,“ jer je ideološka lojalnost bila važnija od istine ili
+     <br><br>
+      pravde. Partija je bila božansko biće, a birokratija je imala krajnju moć — „jedan potpis je jači od deset divizija.“ 
+      <br><br>
+      Demokratiju je smatrao obmanom, tvrdeći da je „demokratija samo dekoracija za kapitalizam.“ Sve ove izjave odražavaju 
+      <br><br>
+      ideološki sistem u kojem cilj opravdava svako sredstvo, gde je pojedinac potrošan, 
+      <br><br>
+      lojalnost režimu apsolutna, a svet zauvek podeljen između „nas“ i „njih,“ bez prostora za neutralnost ili dijalog.</p>
+   </h1>
+   
+  </h1>
+ <div id="ascii-container" class="ascii-art"></div>
+
+  <script>
+    function colorAsciiArt(asciiText) {
+      const colorMap = {
+        '#': 'crna',
+        '.': 'crna',
+        '*': 'crna',
+        '+': 'crna',
+        '=': 'crna',
+        ':': 'crna',
+        '-': 'crna',
+        '@': 'crna',
+        '%': 'crna',
+      };
+  
+      let coloredHtml = '';
+      for (const char of asciiText) {
+        if (colorMap[char]) {
+          coloredHtml += `<span class="${colorMap[char]}">${char}</span>`;
+        } else if (char === '\n') {
+          coloredHtml += '<br>';
+        } else {
+          coloredHtml += char;
+        }
+      }
+      return coloredHtml;
+    }
+  
+    const asciiArt = `
+    
+
+                                     ==--=***#%%%@@%%%@#*=  
+                                  ==#%%%@@@@%@@@@@@@%%@@%@@@%+= 
+                                 =@@%@@@@@@@@@@%@%@@%@@@%%@@@@@@@@+= 
+                              =#%%%@@%@@@%%@@@@@@%@@@%%@@@%@@@%%@%@@=-  
+                            =#%%%@@%%@@@@%@@%@%@%@@%%%%%%@%@%%@@@@@%%#=  
+                           =#*%*#%#%%%@#%%#%%%##%#*#+%#%#*##%%@%@@@@@%@-  
+                          =**#**@*+**#**%#*#*##*#+#%####+#%%%%@%%@%@@@@%= 
+                        =++**##%##*+##%#####%###+*#*+***##@*%%%@@@@@%@@+=  
+                        =*#**%+**+***#*+++===-:-::::::-=-*%%@@%@@@@@@@@%=  
+                        =*#+*++-=----+:.:..........::::-==+*#%%%%%%@@@@@@# 
+                        *##+=::...-................:::-=+***%#%%%%%@@@@@%-  
+                        ****#-:...................:::--==+***%%%%@%@@@@@%%  
+                        *#%*-:..:.............::::::-:--***#%@@@@@@@@@@@%-  
+                        +%%-:::.......:......::..::::-:-=*#@@@@@@@@@@@%%#=  
+                         %#-::-....:....:.:..-=-+#+--=-----*%@@@@@@@@%@@%=  
+                         @#:--:..:::.....:-#%%*===+*#*====-+=#@@@@@@@@@@%=  
+                         @*%#==:.::::..==**+::..:--=##==+--=+*%@@@@@#=-++-  
+                        -*+*-=##%#*::::-==-#-*#%%%#==+==-====+#%@@#-=#** =  
+                          #--+-%%%*-::-++*+**==-:==++:::--====++%*--=:-=:-  
+                          --%*=+==*:=-:=+*====:--::::--::-===-++*+==+--=:=   
+                          =:::::::-::-=-++-:-=---:.::::----=++=++*--.::-.=   
+                           :::::::::--=+==-.:::::::::-::-==*==+++*==-.--:-   
+                           :::..::::---%**=::....:-:-+-==+=+++==+++=:-+:=    
+                           ::........:-+++#*--.:..:----==-=++=-+=+*:--- 
+                            ::.:::-::-+#@%+*+:::::::--====+*=*==++--::--  
+                             :::-::-*+%***:+:==::::=---=+++++++=+*#-=*#=    
+                              ::--=**+#+*-#*%%%#*=+-:--=+=+++*++++**#%%=     
+                               =+###****#%%%%%%%%*#---==+=+=+*+++***+##-    
+                              :+@%#*%***%#%%%%@@%@%*:-=*+*=+++*++****#%-     
+                               #%%%%%%*=--=+#*+**+###==++==+**+**##+#@%#=    
+                              +**+--:::--::-------:--=*+*=+**+*+##*%%%%%*    
+                              =    :--+====+=-----:-=++*+=+##**%%%%%%%@%%#%%%%%%%%%%%%     
+                                    :--:--:-::::-==:++*==+*%#*@%%%%%%%@%%%%%%%%%%%%%%%%%%     
+                                     :::...::-::-==+*#***#%#%@%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
+                                       ::-:--:-===+*####*%@@@%%%%%%##%%%%%%%#%#*%%%%%%%%%%%%%%   
+                                         -=+***#%%%%%%@@@%%%#%#%%###%%%%%#%##%#%%%%%%%%%%%%%%%    
+                                     +*+#%**####%%%%%@@%%%%##########%%#%%%@#%%#%%%%%%%%%%%%%%%%%     
+                              -=-=*#%##**===+*#%%%%@@%#%#%##**##%*##%#*#*%#**###%%%%%%%%%%%%%%%%%%   
+                           ===###%###*%+++*###%@@%%####*#**#*#########%%##%%###%#%%%#%%%%%%%%%%%%%%    
+                         =+#######*##*#*#.+**@@###****#**####***#**#*@#*%#########%%%%%%%%%%%%%%%%%    
+                      =*#########**##*#+#-.*****#***+##**##*#***#*%%###*#####%#*%##%%%%%%%%%%%%%%%%   
+                    =#######*###*######+#****#***##**#*#%*######%#%*#*#*####**####+##%%%%%%%%%%%%%%%  
+                  =+##########*########%@%*****#*#####*####*#*%######*#*#*##**#####%#%####%#%%#%%%%%  
+                =*##***####*######*#%@@%*#**#*######*####*@#####*#**#**#########**####%####%%%%%%%%% 
+               ***##*##########*##%@@@%##*####*#*#*####@###*####%*#*########*#*##*+#####*%##*######%
+              #***#**##*#*#**##*%@@%%%#@@#*#*##*###%%*###*####**##*#*##**####*##*##*###***####*%*###
+             *###*##***#*###*#*%@@%%###*%@##*#*##%@##***+######*#*#**#%##*#*#***##*############*##%# 
+             *##********#****#%%%%#**#*%-%***##@%###*#**##%#*##**#######****#*#**#*##***#*#*#####%## 
+            *###**#******#**+*###**##*##*##@%####****##########**####***#*#*****#***#####*#*#####*#%
+             #**++****#***#**###*####***##*##*#**#########*###*###*#**###**#**#**##**#**#**##*###@@@
+           **#**++*#******#*#*######****##**##+#####*#####+######****##********#**#**#**####*#@@%%%%
+          +***++******++##*******#*#****###**+*#**##########%##****#*************###**#*#%##@%%#%%%%
+         =***#****++**+*******#**##*#****%*#****#@##*#***#*##+**#*####**+*#****##*#*****#%@%%#%##%##
+        *+*#*#*+++******##****##*#*#****#**#**######*#*####*#*#*+*#+#****#***#**##***#@@%#*#*#####%
+        #*+**#*=+++*+*+**#*#*####*#*******#+**#**#**##*#**#*****+##%#*##**+*****+*+*%@%##*#%#*###%#*
+       *%*+****=++++**#***##*#*#***#*****#***###**#%#**#=+******#*##*+%#++*#**#**#%@%%**++#*##%**#**
+        #@*****#++**#********#*#*#****++***+*#*###*####**********#%#**++#***#+###%@#*#*#*##*%****#*#
+        +*%#**+++**+**#*+###******%@#*******#*#**##****#****#****###**+++*#*#+*#%%*#****##*##*###*#%
+       ++***%#+***++****##******#@@#**#+*#****####**#*+*******##*###***+*#%#++#%%##***+*****##***##%
+       =*********+*#*#***###**###%%**+****+*++***********###**#*####*#*++#%**#%#**#**##**#+***#####%
+      ++*****@++*+%*#**##*#*##******#*******+***#**#**%#*##**#*#***+*#**#*#**#**#++#####******%#%##*
+      ++***#*++*+%***+*#**#*#**#+*+**+#***#####******####****#####%**#*+*#+###*#*####**##*##%%%##*##
+      +****#**#=**#****+#*#*####******#**+#**********#*+*******##%#*+%##+##****##%#*#+**#*#%%%####*#*
+     *+#*+###*=*@+*****#***#*********+****+******#==*+*#*#+*###****#%#***#**##%%##*#**##%%##*****#**
+     ++**##*##*%%*+******##***++******#*+****#*#*%:.=+#**#####***#**##***%+####**#*#*##%#*##**###**#
+    =****##*#*+*+*+**+***#****++*++#**#**#**+#*##*.=-.%##+**########%#*#%%*#%**#*****%%%+**##**#*+##
+    +*****#*##+*+****#***##++******#+*#*#**+******:+%##*###%#######%#%###%**+*+**+**#%*+**+*******##
+   ****+**#*#*++*******###*************#****#*##***#**####%#%#%#**###%##%%%#**+*+*###*******#*#**###
+   ****#****#++++**##*#*#**=@@%+***#*##**#**#####*##*#####*###*######%#%#%*#++****###*******+**#*#%#
+  *****######*==+*##*#***#*@%+##*#*#******+#*##*#*#%**####%%#**##%###%#%%%%*++#*##*#****+******##*#*
+
+                                                                   
+ `;
+
+
+
+ const asciiContainer = document.getElementById('ascii-container');
+  asciiContainer.innerHTML = colorAsciiArt(asciiArt);
+  asciiContainer.classList.add('levitate'); // <-- This adds the levitate effect
+</script>
+
+</body>
+</html>
