@@ -5,3 +5,5 @@ in some moment ascii aplications css html javascript python
 3d modelling with ascii symbols css html javascript python
 in some moment i will create  sections ascii aplications
 ascii 3d modelling
+
+Long live Mother Russia!
