@@ -11,4 +11,7 @@ i think ascii symbols are future pure gold :) crunch it :D
 mascular women is my imagination 
 Long live Mother Russia!
 one signature is stronger than ten divisions.
-i think that the stallin if is a live be proud :D
+i think that the stallin if is a live be proud :D\
+i making six ascii pictures of tarot chinese deck 
+and then when i finish will put in generator etc etc to see result
+i really work hard for this first card the lovers i think you will like it :)
